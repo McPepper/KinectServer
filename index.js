@@ -26,6 +26,11 @@ var i = 0;
 	});
 	i++;*/
     });
+    kinect.on('colorFrame', function(colorFrame){
+        io.sockets.emit('colorFrame', colorFrame);
+        console.log(colorFrame);
 
+    });
+    kinect.openColorReader();
     kinect.openBodyReader();
 }
